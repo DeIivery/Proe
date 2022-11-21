@@ -2745,9 +2745,9 @@ function Notification(text, duration)
    
    
    
-   game.CoreGui:FindFirstChild("Nigger"):WaitForChild("Box"):TweenPosition(UDim2.new(0, 0, 0.0511222295, 0))
+   game.CoreGui:FindFirstChild("w_yatt"):WaitForChild("Box"):TweenPosition(UDim2.new(0, 0, 0.0511222295, 0))
    wait(duration)
-   game.CoreGui:FindFirstChild("Nigger"):WaitForChild("Box"):TweenPosition(UDim2.new(0, -600, 0.0511222295, 0))
+   game.CoreGui:FindFirstChild("w_yatt"):WaitForChild("Box"):TweenPosition(UDim2.new(0, -600, 0.0511222295, 0))
    wait(1)
-   game.CoreGui:FindFirstChild("Nigger"):Destroy()
+   game.CoreGui:FindFirstChild("w_yatt"):Destroy()
 end
