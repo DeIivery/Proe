@@ -2707,8 +2707,6 @@ end
 end)
 
 function Notification(text, duration)
-   if game.CoreGui:FindFirstChild("w_yatt") then game.CoreGui.w_yatt:Destroy() end
-   
    local ScreenGui = Instance.new("ScreenGui")
    local Box = Instance.new("Frame")
    local Frame = Instance.new("Frame")
@@ -2716,7 +2714,6 @@ function Notification(text, duration)
    syn.protect_gui(ScreenGui)
    
    ScreenGui.Parent = game.CoreGui
-   ScreenGui.Name = "w_yatt"
    
    Box.Name = "Box"
    Box.Parent = ScreenGui
@@ -2745,9 +2742,9 @@ function Notification(text, duration)
    
    
    
-   game.CoreGui:FindFirstChild("w_yatt"):WaitForChild("Box"):TweenPosition(UDim2.new(0, 0, 0.0511222295, 0))
+   ScreenGui:WaitForChild("Box"):TweenPosition(UDim2.new(0, 0, 0.0511222295, 0))
    wait(duration)
-   game.CoreGui:FindFirstChild("w_yatt"):WaitForChild("Box"):TweenPosition(UDim2.new(0, -600, 0.0511222295, 0))
+   ScreenGui:WaitForChild("Box"):TweenPosition(UDim2.new(0, -600, 0.0511222295, 0))
    wait(1)
-   game.CoreGui:FindFirstChild("w_yatt"):Destroy()
+   ScreenGui:Destroy()
 end
