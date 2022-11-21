@@ -2746,3 +2746,44 @@ function Notification(text, duration)
    wait(1)
    ScreenGui:Destroy()
 end
+
+function Load(text)
+   local ScreenGui = Instance.new("ScreenGui")
+   local Box = Instance.new("Frame")
+   local Frame = Instance.new("Frame")
+   local TextLabel = Instance.new("TextLabel")
+   syn.protect_gui(ScreenGui)
+   
+   ScreenGui.Parent = game.CoreGui
+   
+   Box.Name = "Box"
+   Box.Parent = ScreenGui
+   Box.BackgroundColor3 = Color3.fromRGB(25,25,25)
+   Box.BorderColor3 = Color3.fromRGB(0, 0, 0)
+   Box.Position = UDim2.new(0, -600, 0.0511222295, 0)
+   Box.Size = UDim2.new(0, 435, 0, 28)
+   
+   Frame.Parent = Box
+   Frame.BackgroundColor3 = Color3.fromRGB(30,30,30)
+   Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+   Frame.Position = UDim2.new(0, 0, 1.36239194e-07, 0)
+   Frame.Size = UDim2.new(0, 7, 0, 28)
+   
+   TextLabel.Parent = Box
+   TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+   TextLabel.BackgroundTransparency = 1.000
+   TextLabel.Position = UDim2.new(0.0321839079, 0, 1.36239194e-07, 0)
+   TextLabel.Size = UDim2.new(0, 421, 0, 28)
+   TextLabel.Font = Enum.Font.Code
+   TextLabel.Text = text
+   TextLabel.TextColor3 = Color3.fromRGB(210,210,210)
+   TextLabel.TextSize = 16.000
+   TextLabel.TextWrapped = true
+   TextLabel.TextXAlignment = Enum.TextXAlignment.Left
+   
+   ScreenGui:WaitForChild("Box"):TweenPosition(UDim2.new(0, 0, 0.0511222295, 0))
+   wait(2)
+   ScreenGui:WaitForChild("Box"):TweenPosition(UDim2.new(0, -600, 0.0511222295, 0))
+   wait(1)
+   ScreenGui:Destroy()
+end
