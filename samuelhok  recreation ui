@@ -276,7 +276,7 @@ library.createToggle = function(option, parent)
             Size = UDim2.new(1, -6, 1, -6),
             BackgroundTransparency = 1,
             Image = "rbxassetid://3570695787",
-            ImageColor3 = Color3.fromRGB(51, 153, 255),
+            ImageColor3 = Color3.fromRGB(42, 110, 178),
             Visible = option.state,
             Parent = tickbox
         })
@@ -296,7 +296,7 @@ library.createToggle = function(option, parent)
         tickbox = library:Create("Frame", {
             Position = UDim2.new(0, 6, 0, 4),
             Size = UDim2.new(0, 12, 0, 12),
-            BackgroundColor3 = Color3.fromRGB(51, 153, 255),
+            BackgroundColor3 = Color3.fromRGB(42, 110, 178),
             BorderColor3 = Color3.new(),
             Parent = option.main
         })
@@ -362,11 +362,11 @@ library.createToggle = function(option, parent)
         if input.UserInputType.Name == "MouseMovement" then
             if not library.warning and not library.slider then
                 if option.style then
-                    tickbox.ImageColor3 = Color3.fromRGB(51, 153, 255)
+                    tickbox.ImageColor3 = Color3.fromRGB(42, 110, 178)
                     --tweenService:Create(tickbox, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {ImageColor3 = library.flags["Menu Accent Color"]}):Play()
                 else
-                    tickbox.BorderColor3 = Color3.fromRGB(51, 153, 255)
-                    tickboxOverlay.BorderColor3 = Color3.fromRGB(51, 153, 255)
+                    tickbox.BorderColor3 = Color3.fromRGB(42, 110, 178)
+                    tickboxOverlay.BorderColor3 = Color3.fromRGB(42, 110, 178)
                     --tweenService:Create(tickbox, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {BorderColor3 = library.flags["Menu Accent Color"]}):Play()
                     --tweenService:Create(tickboxOverlay, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {BorderColor3 = library.flags["Menu Accent Color"]}):Play()
                 end
@@ -498,7 +498,7 @@ library.createButton = function(option, parent)
         end
         if input.UserInputType.Name == "MouseMovement" then
             if not library.warning and not library.slider then
-                option.title.BorderColor3 = Color3.fromRGB(51, 153, 255)
+                option.title.BorderColor3 = Color3.fromRGB(42, 110, 178)
             end
         end
     end)
@@ -572,7 +572,7 @@ library.createBind = function(option, parent)
             binding = true
             bindinput.Text = "[...]"
             bindinput.Size = UDim2.new(0, -textService:GetTextSize(bindinput.Text, 16, Enum.Font.Code, Vector2.new(9e9, 9e9)).X, 0, 16)
-            bindinput.TextColor3 = Color3.fromRGB(51, 153, 255)
+            bindinput.TextColor3 = Color3.fromRGB(42, 110, 178)
         end
     end)
 
@@ -666,7 +666,7 @@ library.createSlider = function(option, parent)
     })
 
     option.fill = library:Create("Frame", {
-        BackgroundColor3 = Color3.fromRGB(51, 153, 255),
+        BackgroundColor3 = Color3.fromRGB(42, 110, 178),
         BorderSizePixel = 0,
         Parent = option.slider
     })
@@ -749,13 +749,13 @@ library.createSlider = function(option, parent)
                 option.title:CaptureFocus()
             else
                 library.slider = option
-                option.slider.BorderColor3 = Color3.fromRGB(51, 153, 255)
+                option.slider.BorderColor3 = Color3.fromRGB(42, 110, 178)
                 option:SetValue(option.min + ((input.Position.X - option.slider.AbsolutePosition.X) / option.slider.AbsoluteSize.X) * (option.max - option.min))
             end
         end
         if input.UserInputType.Name == "MouseMovement" then
             if not library.warning and not library.slider then
-                option.slider.BorderColor3 = Color3.fromRGB(51, 153, 255)
+                option.slider.BorderColor3 = Color3.fromRGB(42, 110, 178)
             end
             if option.tip then
                 library.tooltip.Text = option.tip
@@ -976,11 +976,11 @@ library.createList = function(option, parent)
             local pos = option.main.AbsolutePosition
             option.holder.Position = UDim2.new(0, pos.X + 6, 0, pos.Y + ((option.text == "nil" and not option.sub) and 66 or 84))
             library.popup = option
-            option.listvalue.BorderColor3 = Color3.fromRGB(51, 153, 255)
+            option.listvalue.BorderColor3 = Color3.fromRGB(42, 110, 178)
         end
         if input.UserInputType.Name == "MouseMovement" then
             if not library.warning and not library.slider then
-                option.listvalue.BorderColor3 = Color3.fromRGB(51, 153, 255)
+                option.listvalue.BorderColor3 = Color3.fromRGB(42, 110, 178)
             end
         end
     end)
@@ -1050,7 +1050,7 @@ library.createList = function(option, parent)
             Text = " " ..value,
             TextSize = 15,
             Font = Enum.Font.Code,
-            TextColor3 = Color3.fromRGB(51, 153, 255),
+            TextColor3 = Color3.fromRGB(42, 110, 178),
             TextXAlignment = Enum.TextXAlignment.Left,
             Visible = self.multiselect and self.value[value] or self.value == value,
             Parent = label
@@ -1229,7 +1229,7 @@ library.createBox = function(option, parent)
     end)
 
     inputvalue.Focused:connect(function()
-        option.holder.BorderColor3 = Color3.fromRGB(51, 153, 255)
+        option.holder.BorderColor3 = Color3.fromRGB(42, 110, 178)
     end)
 
     inputvalue.InputBegan:connect(function(input)
@@ -1238,7 +1238,7 @@ library.createBox = function(option, parent)
         end
         if input.UserInputType.Name == "MouseMovement" then
             if not library.warning and not library.slider then
-                option.holder.BorderColor3 = Color3.fromRGB(51, 153, 255)
+                option.holder.BorderColor3 = Color3.fromRGB(42, 110, 178)
             end
             if option.tip then
                 library.tooltip.Text = option.tip
@@ -1660,11 +1660,11 @@ library.createColor = function(option, parent)
             option.mainHolder.Position = UDim2.new(0, pos.X + 36 + (option.trans and -16 or 0), 0, pos.Y + 56)
             option.mainHolder.Visible = true
             library.popup = option
-            option.visualize.BorderColor3 = Color3.fromRGB(51, 153, 255)
+            option.visualize.BorderColor3 = Color3.fromRGB(42, 110, 178)
         end
         if input.UserInputType.Name == "MouseMovement" then
             if not library.warning and not library.slider then
-                option.visualize.BorderColor3 = Color3.fromRGB(51, 153, 255)
+                option.visualize.BorderColor3 = Color3.fromRGB(42, 110, 178)
             end
             if option.tip then
                 library.tooltip.Text = option.tip
@@ -2118,7 +2118,7 @@ function library:AddTab(title, pos)
 
                 table.insert(library.theme, library:Create("Frame", {
                     Size = UDim2.new(1, 0, 0, 1),
-                    BackgroundColor3 = Color3.fromRGB(51, 153, 255),
+                    BackgroundColor3 = Color3.fromRGB(42, 110, 178),
                     BorderSizePixel = 0,
                     BorderMode = Enum.BorderMode.Inset,
                     Parent = self.main
@@ -2488,7 +2488,7 @@ function library:Init()
     table.insert(library.theme, self:Create("Frame", {
         Size = UDim2.new(1, 0, 0, 1),
         Position = UDim2.new(0, 0, 0, 24),
-        BackgroundColor3 = Color3.fromRGB(51, 153, 255),
+        BackgroundColor3 = Color3.fromRGB(42, 110, 178),
         BorderSizePixel = 0,
         Parent = self.main
     }))
@@ -2503,7 +2503,7 @@ function library:Init()
     })
 
     self.tabHighlight = self:Create("Frame", {
-        BackgroundColor3 = Color3.fromRGB(51, 153, 255),
+        BackgroundColor3 = Color3.fromRGB(42, 110, 178),
         BorderSizePixel = 0,
         Parent = self.main
     })
@@ -2587,7 +2587,7 @@ function library:Init()
         end
         self.main.Size = UDim2.new(0, 16 + ((#tab.columns < 2 and 2 or #tab.columns) * 239), 0, 600)
         self.currentTab = tab
-        tab.button.TextColor3 = Color3.fromRGB(51, 153, 255)
+        tab.button.TextColor3 = Color3.fromRGB(42, 110, 178)
         self.tabHighlight:TweenPosition(UDim2.new(0, tab.button.Position.X.Offset, 0, 50), "Out", "Quad", 0.2, true)
         self.tabHighlight:TweenSize(UDim2.new(0, tab.button.AbsoluteSize.X, 0, -1), "Out", "Quad", 0.1, true)
         for _, column in next, tab.columns do
