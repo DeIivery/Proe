@@ -668,7 +668,7 @@ library.createSlider = function(option, parent)
     })
 
     option.fill = library:Create("Frame", {
-        BackgroundColor3 = uicolor),
+        BackgroundColor3 = uicolor,
         BorderSizePixel = 0,
         Parent = option.slider
     })
@@ -982,7 +982,7 @@ library.createList = function(option, parent)
         end
         if input.UserInputType.Name == "MouseMovement" then
             if not library.warning and not library.slider then
-                option.listvalue.BorderColor3 = uicolor)
+                option.listvalue.BorderColor3 = uicolor
             end
         end
     end)
