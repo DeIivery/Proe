@@ -2727,7 +2727,7 @@ function Notification(text, duration)
    Box.Size = UDim2.new(0, 435, 0, 28)
    
    Frame.Parent = Box
-   Frame.BackgroundColor3 = Color3.fromRGB(30,30,30)
+   Frame.BackgroundColor3 = Color3.fromRGB(75, 123, 201)
    Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
    Frame.Position = UDim2.new(0, 0, 1.36239194e-07, 0)
    Frame.Size = UDim2.new(0, 7, 0, 28)
@@ -2768,7 +2768,7 @@ function Load(text)
    Box.Size = UDim2.new(0, 435, 0, 28)
    
    Frame.Parent = Box
-   Frame.BackgroundColor3 = Color3.fromRGB(30,30,30)
+   Frame.BackgroundColor3 = Color3.fromRGB(75, 123, 201)
    Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
    Frame.Position = UDim2.new(0, 0, 1.36239194e-07, 0)
    Frame.Size = UDim2.new(0, 7, 0, 28)
