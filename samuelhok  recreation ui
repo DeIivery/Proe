@@ -4,8 +4,6 @@ getgenv().textService = game:GetService"TextService"
 getgenv().inputService = game:GetService"UserInputService"
 getgenv().tweenService = game:GetService"TweenService"
 
--- 37, 150, 190
--- 47, 87, 158
 local uicolor = Color3.fromRGB(75, 123, 201)
 
 if getgenv().library then
@@ -560,7 +558,7 @@ library.createBind = function(option, parent)
         BorderSizePixel = 0,
         TextSize = 15,
         Font = Enum.Font.Code,
-        TextColor3 = Color3.fromRGB(160, 160, 160),
+        TextColor3 = Color3.fromRGB(125,125,125),
         TextXAlignment = Enum.TextXAlignment.Right,
         Parent = option.main
     })
@@ -574,7 +572,7 @@ library.createBind = function(option, parent)
     interest.InputEnded:connect(function(input)
         if input.UserInputType.Name == "MouseButton1" then
             binding = true
-            bindinput.Text = "[...]"
+            bindinput.Text = "..."
             bindinput.Size = UDim2.new(0, -textService:GetTextSize(bindinput.Text, 16, Enum.Font.Code, Vector2.new(9e9, 9e9)).X, 0, 16)
             bindinput.TextColor3 = uicolor
         end
