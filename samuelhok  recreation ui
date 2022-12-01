@@ -10,7 +10,7 @@ if getgenv().library then
     getgenv().library:Unload()
 end
 
-local library = {design = getgenv().design == "kali" and "kali" or "uwuware", tabs = {}, draggable = true, flags = {}, title = "wyatt systems.co", open = false, popup = nil, instances = {}, connections = {}, options = {}, notifications = {}, tabSize = 0, theme = {}, foldername = "wyatt_configs", fileext = ".txt"}
+local library = {design = getgenv().design == "kali" and "kali" or "uwuware", tabs = {}, draggable = true, flags = {}, title = "wyatt systems.co", open = false, popup = true, instances = {}, connections = {}, options = {}, notifications = {}, tabSize = 0, theme = {}, foldername = "wyatt_configs", fileext = ".txt"}
 getgenv().library = library
 
 --Locals
@@ -408,7 +408,7 @@ library.createToggle = function(option, parent)
         state = state or false
         library.flags[self.flag] = state
         self.state = state
-        option.title.TextColor3 = state and Color3.fromRGB(210, 210, 210) or Color3.fromRGB(160, 160, 160)
+        option.title.TextColor3 = state and Color3.fromRGB(210, 210, 210) or Color3.fromRGB(125, 125, 125)
         if option.style then
             tickboxOverlay.Visible = state
         else
