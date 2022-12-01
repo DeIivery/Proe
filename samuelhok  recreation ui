@@ -12,7 +12,7 @@ if getgenv().library then
     getgenv().library:Unload()
 end
 
-local library = {design = getgenv().design == "kali" and "kali" or "uwuware", tabs = {}, draggable = true, flags = {}, title = "wyatt systems.co┃gg/t6xZRKXFES", open = false, popup = nil, instances = {}, connections = {}, options = {}, notifications = {}, tabSize = 0, theme = {}, foldername = "wyatt_configs", fileext = ".txt"}
+local library = {design = getgenv().design == "kali" and "kali" or "uwuware", tabs = {}, draggable = true, flags = {}, title = "wyatt preview", open = false, popup = nil, instances = {}, connections = {}, options = {}, notifications = {}, tabSize = 0, theme = {}, foldername = "wyatt_configs", fileext = ".txt"}
 getgenv().library = library
 
 --Locals
