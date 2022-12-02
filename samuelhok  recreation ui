@@ -1850,7 +1850,7 @@ function library:AddTab(title, pos)
                 option.callback = typeof(option.callback) == "function" and option.callback or function() end
                 option.type = "button"
                 option.position = #self.options
-                option.flag = (library.flagprefix and library.flagprefix .. " " or "") .. (option.flag or option.text)
+                option.flag = (library.flagprefix and library.flagprefix .. "[" or "]") .. (option.flag or option.text)
                 option.subcount = 0
                 option.canInit = (option.canInit ~= nil and option.canInit) or true
                 option.tip = option.tip and tostring(option.tip)
