@@ -622,7 +622,7 @@ library.createBind = function(option, parent)
         self.key = (key and key.Name) or key or self.key
         if self.key == "Backspace" then
             self.key = "none"
-            bindinput.Text = "┃NONE"
+            bindinput.Text = "NONE"
         else
             local a = self.key
             if self.key:match"Mouse" then
@@ -630,7 +630,7 @@ library.createBind = function(option, parent)
             elseif self.key:match"Shift" or self.key:match"Alt" or self.key:match"Control" then
                 a = self.key:gsub("Left", "L"):gsub("Right", "R")
             end
-            bindinput.Text = "┃" .. a:gsub("Control", "CTRL"):upper() .. ""
+            bindinput.Text = "" .. a:gsub("Control", "CTRL"):upper() .. ""
         end
         bindinput.Size = UDim2.new(0, -textService:GetTextSize(bindinput.Text, 16, Enum.Font.Code, Vector2.new(9e9, 9e9)).X, 0, 16)
     end
