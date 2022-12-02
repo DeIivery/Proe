@@ -622,7 +622,7 @@ library.createBind = function(option, parent)
         self.key = (key and key.Name) or key or self.key
         if self.key == "Backspace" then
             self.key = "none"
-            bindinput.Text = "[NONE]"
+            bindinput.Text = "┃NONE"
         else
             local a = self.key
             if self.key:match"Mouse" then
@@ -630,7 +630,7 @@ library.createBind = function(option, parent)
             elseif self.key:match"Shift" or self.key:match"Alt" or self.key:match"Control" then
                 a = self.key:gsub("Left", "L"):gsub("Right", "R")
             end
-            bindinput.Text = "┃ " .. a:gsub("Control", "CTRL"):upper() .. ""
+            bindinput.Text = "┃" .. a:gsub("Control", "CTRL"):upper() .. ""
         end
         bindinput.Size = UDim2.new(0, -textService:GetTextSize(bindinput.Text, 16, Enum.Font.Code, Vector2.new(9e9, 9e9)).X, 0, 16)
     end
@@ -1922,7 +1922,7 @@ function library:AddTab(title, pos)
                 option.textpos = option.textpos == 2
                 option.type = "slider"
                 option.position = #self.options
-                option.flag = (library.flagprefix and library.flagprefix .. " " or "") .. (option.flag or option.text)
+                option.flag = (library.flagprefix and library.flagprefix .. "" or "") .. (option.flag or option.text)
                 option.subcount = 0
                 option.canInit = (option.canInit ~= nil and option.canInit) or true
                 option.tip = option.tip and tostring(option.tip)
