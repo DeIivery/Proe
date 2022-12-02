@@ -560,7 +560,7 @@ library.createBind = function(option, parent)
         BorderSizePixel = 0,
         TextSize = 15,
         Font = Enum.Font.Code,
-        TextColor3 = Color3.fromRGB(125,125,125),
+        TextColor3 = Color3.fromRGB(180,180,180),
         TextXAlignment = Enum.TextXAlignment.Right,
         Parent = option.main
     })
