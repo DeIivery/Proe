@@ -7,7 +7,7 @@ getgenv().tweenService = game:GetService"TweenService"
 -- 0, 204, 102
 -- 75, 123, 201
 -- 29, 125, 228 good blue
-local uicolor = Color3.fromRGB(0, 102, 204)
+local uicolor = Color3.fromRGB(29, 125, 228)
 
 if getgenv().library then
     getgenv().library:Unload()
@@ -411,7 +411,7 @@ library.createToggle = function(option, parent)
         state = state or false
         library.flags[self.flag] = state
         self.state = state
-        option.title.TextColor3 = state and Color3.fromRGB(210, 210, 210) or Color3.fromRGB(180,180,180)
+        option.title.TextColor3 = state and Color3.fromRGB(235,235,235) or Color3.fromRGB(125,125,125)
         if option.style then
             tickboxOverlay.Visible = state
         else
