@@ -2716,7 +2716,6 @@ function Notification(text, duration)
    local Box = Instance.new("Frame")
    local Frame = Instance.new("Frame")
    local TextLabel = Instance.new("TextLabel")
-   syn.protect_gui(ScreenGui)
    
    ScreenGui.Parent = game.CoreGui
    
@@ -2757,7 +2756,6 @@ function Load(text)
    local Box = Instance.new("Frame")
    local Frame = Instance.new("Frame")
    local TextLabel = Instance.new("TextLabel")
-   syn.protect_gui(ScreenGui)
    
    ScreenGui.Parent = game.CoreGui
    
