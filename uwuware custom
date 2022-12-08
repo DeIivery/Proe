@@ -1,5 +1,5 @@
 local library = {flags = {}, windows = {}, open = true}
-local color = Color3.fromRGB(255, 65, 65)
+local color = Color3.fromRGB(29, 125, 228)
 
 --Services
 local runService = game:GetService"RunService"
