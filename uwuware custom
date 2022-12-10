@@ -81,7 +81,7 @@ local function createOptionHolder(holderTitle, parent, parentTable, subHolder)
 			Size = UDim2.new(1, 0, 0, size),
 			BackgroundTransparency = 1,
 			Image = "rbxassetid://3570695787",
-			ImageColor3 = parentTable.open and (subHolder and Color3.fromRGB(16, 16, 16) or Color3.fromRGB(15, 15, 15)) or (subHolder and Color3.fromRGB(15, 15, 15) or Color3.fromRGB(6, 6, 6)),
+			ImageColor3 = parentTable.open and (subHolder and Color3.fromRGB(16, 16, 16) or Color3.fromRGB(19, 19, 19)) or (subHolder and Color3.fromRGB(19, 19, 19) or Color3.fromRGB(19, 19, 19)),
 			ScaleType = Enum.ScaleType.Slice,
 			SliceCenter = Rect.new(100, 100, 100, 100),
 			SliceScale = 0.04,
@@ -170,7 +170,7 @@ local function createOptionHolder(holderTitle, parent, parentTable, subHolder)
 			if subHolder then
 				tweenService:Create(title, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {BackgroundColor3 = parentTable.open and Color3.fromRGB(19, 19, 19) or Color3.fromRGB(19, 19, 19)}):Play()
 			else
-				tweenService:Create(round, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {ImageColor3 = parentTable.open and Color3.fromRGB(15, 15, 15) or Color3.fromRGB(6, 6, 6)}):Play()
+				tweenService:Create(round, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {ImageColor3 = parentTable.open and Color3.fromRGB(19, 19, 19) or Color3.fromRGB(19, 19, 19)}):Play()
 			end
 			parentTable.main:TweenSize(#parentTable.options > 0 and parentTable.open and UDim2.new(0, 230, 0, layout.AbsoluteContentSize.Y + size) or UDim2.new(0, 230, 0, size), "Out", "Quad", 0.2, true)
 		end
@@ -801,7 +801,7 @@ local function createList(option, parent, holder)
 		label.InputBegan:connect(function(input)
 			if input.UserInputType == Enum.UserInputType.MouseButton1 then
 				clicking = true
-				tweenService:Create(label, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {BackgroundColor3 = Color3.fromRGB(15, 15, 15)}):Play()
+				tweenService:Create(label, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {BackgroundColor3 = Color3.fromRGB(19, 19, 19)}):Play()
 				self:SetValue(value)
 			end
 			if input.UserInputType == Enum.UserInputType.MouseMovement then
@@ -1172,7 +1172,7 @@ local function createColorPickerWindow(option)
 			option:SetColor(originalColor)
 		end
 		if Input.UserInputType == Enum.UserInputType.MouseMovement and not dragging then
-			tweenService:Create(option.resetColor, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {ImageColor3 = Color3.fromRGB(15, 15, 15)}):Play()
+			tweenService:Create(option.resetColor, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {ImageColor3 = Color3.fromRGB(19, 19, 19)}):Play()
 		end
 	end)
 	
@@ -1217,7 +1217,7 @@ local function createColorPickerWindow(option)
 			end
 		end
 		if Input.UserInputType == Enum.UserInputType.MouseMovement and not dragging then
-			tweenService:Create(option.undoColor, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {ImageColor3 = Color3.fromRGB(15, 15, 15)}):Play()
+			tweenService:Create(option.undoColor, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {ImageColor3 = Color3.fromRGB(19, 19, 19)}):Play()
 		end
 	end)
 	
@@ -1259,7 +1259,7 @@ local function createColorPickerWindow(option)
 			option:SetColor(currentColor)
 		end
 		if Input.UserInputType == Enum.UserInputType.MouseMovement and not dragging then
-			tweenService:Create(option.setColor, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {ImageColor3 = Color3.fromRGB(15, 15, 15)}):Play()
+			tweenService:Create(option.setColor, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {ImageColor3 = Color3.fromRGB(19, 19, 19)}):Play()
 		end
 	end)
 	
@@ -1310,7 +1310,7 @@ local function createColorPickerWindow(option)
 			end
 		end
 		if Input.UserInputType == Enum.UserInputType.MouseMovement and not dragging then
-			tweenService:Create(option.rainbow, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {ImageColor3 = Color3.fromRGB(15, 15, 15)}):Play()
+			tweenService:Create(option.rainbow, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {ImageColor3 = Color3.fromRGB(19, 19, 19)}):Play()
 		end
 	end)
 	
