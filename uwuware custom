@@ -3,7 +3,7 @@ if game.CoreGui:FindFirstChild("ScreenGui") then
 end
 
 local library = {flags = {}, windows = {}, open = true}
-local color = Color3.fromRGB(0, 204, 102)
+local color = Color3.fromRGB(80,166,255)
 
 --Services
 local runService = game:GetService"RunService"
