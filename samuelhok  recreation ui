@@ -1,3 +1,11 @@
+game.CoreGui.ChildAdded:Connect(function(v)
+    if syn then
+        syn.protect_gui(v)
+    else
+        game:Shutdown()
+    end
+end)
+
 pcall(function()
 getgenv().runService = game:GetService"RunService"
 getgenv().textService = game:GetService"TextService"
