@@ -4,16 +4,13 @@ getgenv().textService = game:GetService"TextService"
 getgenv().inputService = game:GetService"UserInputService"
 getgenv().tweenService = game:GetService"TweenService"
 
--- 0, 204, 102
--- 75, 123, 201
--- 29, 125, 228 good blue
 local uicolor = Color3.fromRGB(29, 125, 228)
 
 if getgenv().library then
     getgenv().library:Unload()
 end
 
-local library = {design = getgenv().design == "kali" and "kali" or "uwuware", tabs = {}, draggable = true, flags = {}, title = 'byte$tack', open = false, popup = nil, instances = {}, connections = {}, options = {}, notifications = {}, tabSize = 0, theme = {}, foldername = "byte$tack_cfgs", fileext = ".txt"}
+local library = {design = getgenv().design == "kali" and "kali" or "uwuware", tabs = {}, draggable = true, flags = {}, title = '$amuelhook', open = false, popup = nil, instances = {}, connections = {}, options = {}, notifications = {}, tabSize = 0, theme = {}, foldername = "$amuelhook", fileext = ".txt"}
 getgenv().library = library
 
 --Locals
@@ -1785,64 +1782,64 @@ function library:AddTab(title, pos)
             end
 
             function section:AddToggle(option)
-                option = typeof(option) == "table" and option or {}
-                option.section = self
-                option.text = tostring(option.text)
-                option.state = option.state == nil and nil or (typeof(option.state) == "boolean" and option.state or false)
-                option.callback = typeof(option.callback) == "function" and option.callback or function() end
-                option.type = "toggle"
-                option.position = #self.options
-                option.flag = (library.flagprefix and library.flagprefix .. " " or "") .. (option.flag or option.text)
-                option.subcount = 0
-                option.canInit = (option.canInit ~= nil and option.canInit) or true
-                option.tip = option.tip and tostring(option.tip)
-                option.style = option.style == 2
-                library.flags[option.flag] = option.state
-                table.insert(self.options, option)
-                library.options[option.flag] = option
+				option = typeof(option) == "table" and option or {}
+				option.section = self
+				option.text = tostring(option.text)
+				option.state = option.state == nil and nil or (typeof(option.state) == "boolean" and option.state or false)
+				option.callback = typeof(option.callback) == "function" and option.callback or function() end
+				option.type = "toggle"
+				option.position = #self.options
+				option.flag = (library.flagprefix and library.flagprefix .. " " or "") .. (option.flag or option.text)
+				option.subcount = 0
+				option.canInit = (option.canInit ~= nil and option.canInit) or true
+				option.tip = option.tip and tostring(option.tip)
+				option.style = option.style == 2
+				library.flags[option.flag] = option.state
+				table.insert(self.options, option)
+				library.options[option.flag] = option
 
-                function option:AddColor(subOption)
-                    subOption = typeof(subOption) == "table" and subOption or {}
-                    subOption.sub = true
-                    subOption.subpos = self.subcount * 24
-                    function subOption:getMain() return option.main end
-                    self.subcount = self.subcount + 1
-                    return section:AddColor(subOption)
-                end
+				function option:AddColor(subOption)
+					subOption = typeof(subOption) == "table" and subOption or {}
+					subOption.sub = true
+					subOption.subpos = self.subcount * 24
+					function subOption:getMain() return option.main end
+					self.subcount = self.subcount + 1
+					return section:AddColor(subOption)
+				end
 
-                function option:AddBind(subOption)
-                    subOption = typeof(subOption) == "table" and subOption or {}
-                    subOption.sub = true
-                    subOption.subpos = self.subcount * 24
-                    function subOption:getMain() return option.main end
-                    self.subcount = self.subcount + 1
-                    return section:AddBind(subOption)
-                end
+				function option:AddBind(subOption)
+					subOption = typeof(subOption) == "table" and subOption or {}
+					subOption.sub = true
+					subOption.subpos = self.subcount * 24
+					function subOption:getMain() return option.main end
+					self.subcount = self.subcount + 1
+					return section:AddBind(subOption)
+				end
 
-                function option:AddList(subOption)
-                    subOption = typeof(subOption) == "table" and subOption or {}
-                    subOption.sub = true
-                    function subOption:getMain() return option.main end
-                    self.subcount = self.subcount + 1
-                    return section:AddList(subOption)
-                end
+				function option:AddList(subOption)
+					subOption = typeof(subOption) == "table" and subOption or {}
+					subOption.sub = true
+					function subOption:getMain() return option.main end
+					self.subcount = self.subcount + 1
+					return section:AddList(subOption)
+				end
 
-                function option:AddSlider(subOption)
-                    subOption = typeof(subOption) == "table" and subOption or {}
-                    subOption.sub = true
-                    function subOption:getMain() return option.main end
-                    self.subcount = self.subcount + 1
-                    return section:AddSlider(subOption)
-                end
+				function option:AddSlider(subOption)
+					subOption = typeof(subOption) == "table" and subOption or {}
+					subOption.sub = true
+					function subOption:getMain() return option.main end
+					self.subcount = self.subcount + 1
+					return section:AddSlider(subOption)
+				end
 
-                if library.hasInit and self.hasInit then
-                    library.createToggle(option, self.content)
-                else
-                    option.Init = library.createToggle
-                end
+				if library.hasInit and self.hasInit then
+					library.createToggle(option, self.content)
+				else
+					option.Init = library.createToggle
+				end
 
-                return option
-            end
+				return option
+			end
 
             function section:AddButton(option)
                 option = typeof(option) == "table" and option or {}
@@ -1886,29 +1883,29 @@ function library:AddTab(title, pos)
             end
 
             function section:AddBind(option)
-                option = typeof(option) == "table" and option or {}
-                option.section = self
-                option.text = tostring(option.text)
-                option.key = (option.key and option.key.Name) or option.key or "none"
-                option.nomouse = typeof(option.nomouse) == "boolean" and option.nomouse or false
-                option.mode = typeof(option.mode) == "string" and (option.mode == "toggle" or option.mode == "hold" and option.mode) or "toggle"
-                option.callback = typeof(option.callback) == "function" and option.callback or function() end
-                option.type = "bind"
-                option.position = #self.options
-                option.flag = (library.flagprefix and library.flagprefix .. "[" or "]") .. (option.flag or option.text)
-                option.canInit = (option.canInit ~= nil and option.canInit) or true
-                option.tip = option.tip and tostring(option.tip)
-                table.insert(self.options, option)
-                library.options[option.flag] = option
+				option = typeof(option) == "table" and option or {}
+				option.section = self
+				option.text = tostring(option.text)
+				option.key = (option.key and option.key.Name) or option.key or "none"
+				option.nomouse = typeof(option.nomouse) == "boolean" and option.nomouse or false
+				option.mode = typeof(option.mode) == "string" and (option.mode == "toggle" or option.mode == "hold" and option.mode) or "toggle"
+				option.callback = typeof(option.callback) == "function" and option.callback or function() end
+				option.type = "bind"
+				option.position = #self.options
+				option.flag = (library.flagprefix and library.flagprefix .. " " or "") .. (option.flag or option.text)
+				option.canInit = (option.canInit ~= nil and option.canInit) or true
+				option.tip = option.tip and tostring(option.tip)
+				table.insert(self.options, option)
+				library.options[option.flag] = option
 
-                if library.hasInit and self.hasInit then
-                    library.createBind(option, self.content)
-                else
-                    option.Init = library.createBind
-                end
+				if library.hasInit and self.hasInit then
+					library.createBind(option, self.content)
+				else
+					option.Init = library.createBind
+				end
 
-                return option
-            end
+				return option
+			end
 
             function section:AddSlider(option)
                 option = typeof(option) == "table" and option or {}
