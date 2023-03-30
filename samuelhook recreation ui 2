@@ -80,7 +80,7 @@ function library:Unload()
         end
     end
     for _, o in next, self.options do
-        if o.type == "toggle" then
+        if o.type == "toggle" or o.type == "risktoggle" then
             coroutine.resume(coroutine.create(o.SetState, o))
         end
     end
@@ -350,7 +350,7 @@ library.createToggle = function(option, parent)
         Size = UDim2.new(1, 0, 1, 0),
         BackgroundTransparency = 1,
         Text = option.text,
-        TextColor3 =  option.state and Color3.fromRGB(210, 210, 210) or Color3.fromRGB(180, 180, 180),
+        TextColor3 = option.state and Color3.fromRGB(210, 210, 210) or Color3.fromRGB(180, 180, 180),
         TextSize = 15,
         Font = Enum.Font.Code,
         TextXAlignment = Enum.TextXAlignment.Left,
@@ -408,7 +408,7 @@ library.createToggle = function(option, parent)
         state = state or false
         library.flags[self.flag] = state
         self.state = state
-        option.title.TextColor3 = state and Color3.fromRGB(235,235,235) or Color3.fromRGB(180,180,180)
+        option.title.TextColor3 = state and Color3.fromRGB(235, 235, 235) or Color3.fromRGB(180, 180, 180)
         if option.style then
             tickboxOverlay.Visible = state
         else
@@ -1794,6 +1794,67 @@ function library:AddTab(title, pos)
 				option.canInit = (option.canInit ~= nil and option.canInit) or true
 				option.tip = option.tip and tostring(option.tip)
 				option.style = option.style == 2
+				library.flags[option.flag] = option.state
+				table.insert(self.options, option)
+				library.options[option.flag] = option
+
+				function option:AddColor(subOption)
+					subOption = typeof(subOption) == "table" and subOption or {}
+					subOption.sub = true
+					subOption.subpos = self.subcount * 24
+					function subOption:getMain() return option.main end
+					self.subcount = self.subcount + 1
+					return section:AddColor(subOption)
+				end
+
+				function option:AddBind(subOption)
+					subOption = typeof(subOption) == "table" and subOption or {}
+					subOption.sub = true
+					subOption.subpos = self.subcount * 24
+					function subOption:getMain() return option.main end
+					self.subcount = self.subcount + 1
+					return section:AddBind(subOption)
+				end
+
+				function option:AddList(subOption)
+					subOption = typeof(subOption) == "table" and subOption or {}
+					subOption.sub = true
+					function subOption:getMain() return option.main end
+					self.subcount = self.subcount + 1
+					return section:AddList(subOption)
+				end
+
+				function option:AddSlider(subOption)
+					subOption = typeof(subOption) == "table" and subOption or {}
+					subOption.sub = true
+					function subOption:getMain() return option.main end
+					self.subcount = self.subcount + 1
+					return section:AddSlider(subOption)
+				end
+
+				if library.hasInit and self.hasInit then
+					library.createToggle(option, self.content)
+				else
+					option.Init = library.createToggle
+				end
+
+				return option
+            end
+		
+		    function section:AddRiskToggle(option)
+				option = typeof(option) == "table" and option or {}
+				option.section = self
+				option.text = tostring(option.text)
+				option.state = option.state == nil and nil or (typeof(option.state) == "boolean" and option.state or false)
+				option.callback = typeof(option.callback) == "function" and option.callback or function() end
+				option.type = "risktoggle"
+				option.position = #self.options
+				option.flag = (library.flagprefix and library.flagprefix .. " " or "") .. (option.flag or option.text)
+				option.subcount = 0
+				option.canInit = (option.canInit ~= nil and option.canInit) or true
+				option.tip = option.tip and tostring(option.tip)
+				option.style = option.style == 2
+				option.title.TextColor3 = Color3.fromRGB(255, 102, 102)
 				library.flags[option.flag] = option.state
 				table.insert(self.options, option)
 				library.options[option.flag] = option
