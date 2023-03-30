@@ -1854,6 +1854,22 @@ function library:AddTab(title, pos)
                 option.tip = option.tip and tostring(option.tip)
                 table.insert(self.options, option)
                 library.options[option.flag] = option
+                
+                function option:AddList(subOption)
+					subOption = typeof(subOption) == "table" and subOption or {}
+					subOption.sub = true
+					function subOption:getMain() return option.main end
+					self.subcount = self.subcount + 1
+					return section:AddList(subOption)
+				end
+
+				function option:AddSlider(subOption)
+					subOption = typeof(subOption) == "table" and subOption or {}
+					subOption.sub = true
+					function subOption:getMain() return option.main end
+					self.subcount = self.subcount + 1
+					return section:AddSlider(subOption)
+				end
 
                 function option:AddBind(subOption)
                     subOption = typeof(subOption) == "table" and subOption or {}
