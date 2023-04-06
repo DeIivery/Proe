@@ -4,7 +4,7 @@ getgenv().textService = game:GetService"TextService"
 getgenv().inputService = game:GetService"UserInputService"
 getgenv().tweenService = game:GetService"TweenService"
 
--- 29, 125, 228
+-- 29, 125, 228 [ 33, 112, 255 [ 32, 99, 255
 
 local uicolor = Color3.fromRGB(32, 99, 255)
 
