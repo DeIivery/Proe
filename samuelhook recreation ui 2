@@ -9,7 +9,7 @@ local colors = {
  "6, 156, 255"
 }
 
-local uicolor = Color3.fromRGB(42, 112, 255)
+local uicolor = Color3.fromRGB(62,91,136)
 
 if getgenv().library then
     getgenv().library:Unload()
