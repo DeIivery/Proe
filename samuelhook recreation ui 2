@@ -4,6 +4,7 @@ getgenv().textService = game:GetService"TextService"
 getgenv().inputService = game:GetService"UserInputService"
 getgenv().tweenService = game:GetService"TweenService"
 
+-- 29, 125, 228
 -- 26, 123, 235
 
 local uicolor = Color3.fromRGB(57, 142, 239)
@@ -974,7 +975,7 @@ library.createList = function(option, parent)
             if library.popup then
                 library.popup:Close()
             end
-            option.arrow.Rotation = 90
+            option.arrow.Rotation = -90
             option.open = true
             option.holder.Visible = true
             local pos = option.main.AbsolutePosition
