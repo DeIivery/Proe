@@ -4,10 +4,9 @@ getgenv().textService = game:GetService"TextService"
 getgenv().inputService = game:GetService"UserInputService"
 getgenv().tweenService = game:GetService"TweenService"
 
--- 29, 125, 228
 -- 26, 123, 235
 
-local uicolor = Color3.fromRGB(26, 123, 235)
+local uicolor = Color3.fromRGB(57, 142, 239)
 
 if getgenv().library then
     getgenv().library:Unload()
